@@ -5,14 +5,14 @@ const path = require ('path');
 
 //importar multer
 const multer = require ('multer');
-import {v4 as uuid} from 'uuid'; 
+const uuid = require ('uuid');
 
 
 //importar las rutas 
 import router from './routes';
 
 //importar mongoose
-const mongoose = require ('mongoose');
+const mongoose = require ('mongoose');  
 
 //conexxion a la bd en mongoDB
 mongoose.Promise=global.Promise;
