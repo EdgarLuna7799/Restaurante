@@ -5,3 +5,4 @@ const router=routerx();
 router.use('/cliente',clienteRoutes);
 
 export default router;
+  
