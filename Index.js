@@ -1,27 +1,27 @@
-const express = require('express');
-const cors = require('cors');
-const morgan = require ('morgan');
-const path = require ('path');
+import express from 'express';
+import cors from 'cors';
+import morgan from 'morgan';
+import path from 'path';
 
 //importar multer
-const multer = require ('multer');
-const uuid = require ('uuid');
+import multer from 'multer';
+import {v4 as uuid} from 'uuid';
 
 
 //importar las rutas 
 import router from './routes';
 
 //importar mongoose
-const mongoose = require ('mongoose');  
+import mongoose from 'mongoose';
 
 //conexxion a la bd en mongoDB
 mongoose.Promise=global.Promise;
 
 
 //const dbURL= 'mongodb://localhost:27017/restaurante';  
-//const dbURL= 'mongodb+srv://edgarluna:sistemas97@cluster0.vdvs0lb.mongodb.net/restaurante?retryWrites=true&w=majority';
+const dbURL= 'mongodb+srv://edgarluna:sistemas97@cluster0.vdvs0lb.mongodb.net/restaurante?retryWrites=true&w=majority';
 
-mongoose.connect('mongodb+srv://edgarluna:sistemas97@cluster0.vdvs0lb.mongodb.net/restaurante?retryWrites=true&w=majority', {useNewUrlParser:true, useUnifiedTopology:true})
+mongoose.connect(dbURL, {useNewUrlParser:true, useUnifiedTopology:true})
 .then(mongoose=>console.log('Conectado al servidor de BD'))
 .catch(err=>console.log(err));
 
